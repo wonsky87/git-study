@@ -654,5 +654,19 @@ msysgit-install.cmd “D:\Program Files (x86)\Git”
 打开git bash，输入 `git flow`
 
 
+7、中间的某次 commit 需要删除，可以通过 git rebase 命令实现（新增）
+ a. git log // 查找要删除的前一次提交的 commit_id
+ b. git rebase -i commit_id // 将 commit_id 替换成复制的值
+ c. 进入 Vim 编辑模式，将要删除的 commit 前面的 `pick` 改成 `drop`
+ d. 保存并退出 Vim
+ 
+ 解决冲突
+该命令执行时极有可能出现 reabase 冲突，可以通过以下方法解决：
+a. git diff // 查看冲突内容
+b. // 手动解决冲突（冲突位置已在文件中标明）
+c. git add <file> 或 git add -A // 添加
+d. git rebase --continue // 继续 rebase
+e. // 若还在 rebase 状态，则重复 2、3、4，直至 rebase 完成出现 applying 字样
+f. git push
 
 	

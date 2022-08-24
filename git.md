@@ -654,7 +654,7 @@ msysgit-install.cmd “D:\Program Files (x86)\Git”
 打开git bash，输入 `git flow`
 
 
-7、中间的某次 commit 需要删除，可以通过 git rebase 命令实现（新增）
+## 7、中间的某次 commit 需要删除，可以通过 git rebase 命令实现（新增）
  a. git log // 查找要删除的前一次提交的 commit_id
  b. git rebase -i commit_id // 将 commit_id 替换成复制的值
  c. 进入 Vim 编辑模式，将要删除的 commit 前面的 `pick` 改成 `drop`
